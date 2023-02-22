@@ -4,7 +4,7 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 def open_file():
     """Open a file for editing."""
     filepath = askopenfilename(
-        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+        filetypes=[("HTML Files", "*.htm *.html *.xhtml *.shtml "), ("All Files", "*.*"), ("Text Files", "*.txt *.log"), ("Java Files", "*.jar *.java *.class *.dpj *.jsp"), ("Python Files", "*.pth *.py"),("Windows Programs","*.bat *.dll *.def *.dlg *.msi *.exe "),("C++ Files","*.cpp *.cxx *.hpp *.hxx *.Hxx *.HXX *.hpp"), ("Other Code Files","*.a *.asm *.asp *.awk *.btm *.BTM *.csv *.db  *.DES *.don *.dpc *.dtd *.dump *.dxp *.eng *.flt *.fmt *.font *.fp *.ft *.h *.H *.hdb *.hdl *.hid *.hrc *.HRC *.idl *.IDL *.ih *.ilb *.inc *.inf *.inl *.ins *.jnl *.js *.unx*.urd*.url*.VMS *.json *.editorconfig *.gitattributes *.gitconfig *.gitignore *.yaml *.yml	*.vor*.W32*.wav*.wmf*.xml*.xpm*.xrb*.y*.yxx")]
     )
     if not filepath:
         return
@@ -18,7 +18,7 @@ def save_file():
     """Save the current file as a new file."""
     filepath = asksaveasfilename(
         defaultextension=".txt",
-        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")],
+        filetypes=[("HTML Files", "*.htm *.html *.xhtml *.shtml "), ("All Files", "*.*"), ("Text Files", "*.txt *.log"), ("Java Files", "*.jar *.java *.class *.dpj *.jsp"), ("Python Files", "*.pth *.py"),("Windows Programs","*.bat *.dll *.def *.dlg *.msi *.exe "),("C++ Files","*.cpp *.cxx *.hpp *.hxx *.Hxx *.HXX *.hpp"), ("Other Code Files","*.a *.asm *.asp *.awk *.btm *.BTM *.csv *.db  *.DES *.don *.dpc *.dtd *.dump *.dxp *.eng *.flt *.fmt *.font *.fp *.ft *.h *.H *.hdb *.hdl *.hid *.hrc *.HRC *.idl *.IDL *.ih *.ilb *.inc *.inf *.inl *.ins *.jnl *.js *.unx*.urd*.url*.VMS *.json *.editorconfig *.gitattributes *.gitconfig *.gitignore *.yaml *.yml	*.vor*.W32*.wav*.wmf*.xml*.xpm*.xrb*.y*.yxx")],
     )
     if not filepath:
         return

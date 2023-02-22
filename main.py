@@ -34,6 +34,9 @@ def on_click_glitch():
 def on_click_reset():
     label["text"] = "Which Button???"
     score = 0
+    savedata = open(''.join(['savedata','.json']), 'w')
+    savedata.write("// File Will Fill With Data As You Play")
+    savedata.close
 def save():
     json = open(''.join(['savedata','.json']), 'w')
     global score
@@ -46,8 +49,9 @@ def load():
     from pathlib import Path
     from tkinter import filedialog
     _path = Path.cwd()
+    json = open(''.join(['savedata','.json']), 'r')
     #I like file dialog with Tk; 
-    file = filedialog.askopenfilename(initialdir=_path,title="Are You Sure?", filetypes=[("Text files", "txt"),("JSON", "json")])
+    file = filedialog.askopenfilename(initialdir=_path,title="Are You Sure?", filetypes=[("YAML", ".yml, .yaml"),("JSON", ".json")])
     with open(file, 'r') as reader:
         json_data = json.load(reader)
 # Create 1st button to update the label widget
@@ -64,6 +68,8 @@ glitch = tk.Button(window, text="????????", command=on_click_glitch, fg="black",
 glitch.pack(pady=20)
 reset = tk.Button(window, text="Reset", command=on_click_reset, fg="black", bg="yellow",font=('YaHei'))
 reset.pack(pady=20)
+loadButton = tk.Button(window, text="Load", command=load, fg="black", bg="yellow",font=('YaHei'))
+loadButton.pack(pady=20)
 scoreButton = tk.Button(window, text=''.join(['Score: ', score]), fg="black", bg="yellow",font=('YaHei'))
 scoreButton.pack(pady=20)
 # Run main loop

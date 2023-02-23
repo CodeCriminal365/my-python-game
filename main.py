@@ -3,6 +3,7 @@
 import time
 import tkinter.ttk as ttk
 import tkinter as tk
+import pathlib
 # Create window Tkinter
 window = tk.Tk()
 # Name our Tkinter application title
